@@ -2,6 +2,7 @@ const key = "f74df980fa4dfddbdd9152467484cea7";
 
 function getData(city) {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`;
+    console.log(url);
     fetch(url)
         .then(response => response.json())
         .then(setData);
@@ -9,7 +10,6 @@ function getData(city) {
 
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(setCurrentPosition);
-    console.log(navigator.geolocation)
 } else {
     alert("geolocation is not supported");
 }
